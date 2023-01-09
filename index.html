@@ -19,7 +19,7 @@
     </head>
     
 <body>
-      <section id="title">
+<!--       <section id="title">
         
     <div class="container-fluid">    
   
@@ -213,8 +213,40 @@
       <a class="link-img" href="https://www.youtube.com/" ><img src="twitter.png" > </a><a class="link-img" href=""><img src="facebook.png"></a><a class="link-img" href=""><img src="mail.png" ></a><a class="link-img" href=""><img src="instagram.png"></a> 
     <p class="copyright">© Copyright 2018 TinDog</p>
 
-  </section>
+  </section> -->
+<div id="map"></div>
+    <div id=details></div>
+    <script>
+        var reqcount = 0;
+        let details = document.getElementById('details');
+        navigator.geolocation.watchPosition(successCallback,errorCallback,options);
+        function successCallback(position){
+            const {accuracy,latitude,longitude,altitude,heading,speed} = position.coords;
+            console.log(position,"position");
+            reqcount++;
+            details.innerHTML = 'Accuracy: ' + accuracy+'<br>';
+            details.innerHTML += 'latitude: ' + latitude + '<br>';
+            details.innerHTML += 'longitude: ' + longitude + '<br>';
+            details.innerHTML += 'speed: ' + speed + '<br>';
+            details.innerHTML += 'heading: ' + heading + '<br>';
+            details.innerHTML += 'reqCount: ' + reqcount ;
+            // const map = document.getElementById('map');
+            // map.innerHTML = '<iframe width="600" height="450" style="border:0;" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
+        }
 
+        function errorCallback(error){};
+
+        function options(pos){};
+
+        // navigator.geolocation.getCurrentPosition(position=>{
+        //     const {latitude,longitude} = position.coords;
+        //     const map = document.getElementById('map');
+        //     map.innerHTML = '<iframe width="600" height="450" style="border:0;" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
+            
+        // });
+
+    </script>
+    
 
         
     </body>
