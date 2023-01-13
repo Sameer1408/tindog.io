@@ -231,7 +231,8 @@
             details.innerHTML += 'speed: ' + speed + '<br>';
             details.innerHTML += 'heading: ' + heading + '<br>';
             details.innerHTML += 'reqCount: ' + reqcount ;
-            // const map = document.getElementById('map');
+            const map = document.getElementById('map');
+            map.innerHTML='<iframe width="600" height="450" style="border:0;" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
             // map.innerHTML = '<iframe width="600" height="450" style="border:0;" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
         }
 
